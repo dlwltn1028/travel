@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <title>MY TRAVEL</title>
+</head>
+<style>
+
+ /* 헤더 고정시키기*/   
+#header { position: fixed;
+    width: 100%;
+    top : 0;
+    left : 0;
+    }
+/*search bar*/
+.search__input {
+    width: 100px;
+    padding: 12px 24px;
+    background-color: transparent;
+    transition: transform 250ms ease-in-out;
+    font-size: 14px;
+    line-height: 18px;
+    color: #575756;
+    background-color: transparent;
+    background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg);
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: 95% center;
+    border-radius: 50px;
+    border: 1px solid #575756;
+    transition: all 250ms ease-in-out;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.search__input::placeholder {
+    color: rgba(87, 87, 86, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.search__input:hover,
+        .search__input:focus {
+    padding: 12px 0;
+    outline: 0;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #575756;
+    border-radius: 0;
+    background-position: 100% center;
+}
+/*기본 세팅*/
+    *{margin : 0; padding: 0;}
+    a{text-decoration: none;}
+    li{list-style: none;}
+
+    /*body 부분 정렬*/
+body{overflow: hidden;
+    margin: 0 auto;
+    width : 100%;}
+
+/* 헤더(타이틀 부분)*/
+#main_header{
+        width : 100%;
+        height : 20px;
+        padding : 20px 50px 50px 50px;;
+        background-color: teal;
+    }
+.main1{
+        vertical-align:middle;
+        
+        text-align: center;
+        font-size: 40px;
+        font-family:sans-serif;
+    }
+.main1 > span> a { color : palevioletred;
+    font-family: 휴먼편지체;}
+.main2 { float : right;
+    font-family:sans-serif;
+    margin-right : 60px;}
+.main2 > span > a {  color: #575756;;}
+
+#banner {
+        
+        background-color: teal;
+        width: 100%;
+        height: 50px;
+        text-align: center;
+    }
+
+.outer-menu-item {
+      float : left;
+      position : relative;
+    }
+    
+    
+.menu-title {
+      display : block;
+      height : 30px; line-height : 30px;
+      text-align : center;
+      padding : 5px 30px;
+      color: #575756;
+    }
+.menu-title > a {color: #575756;}
+.inner-menu {
+      display : none;
+      position : absolute;
+      top : 60px; left : 0;
+      width : 100%;
+      box-shadow : 0 2px 6px rgba(5, 5, 5, 1);
+      z-index : 1000;
+      text-align : center;
+      background-color: white;
+    }
+.inner-menu >li > a{
+      display : block;
+      padding : 5px 10px;
+      color : black;
+    }
+.inner-menu >li > a:hover{
+      background : teal;
+      color : white;
+    }
+
+/*내용 부분*/
+.swiper-container{
+    float :left;
+    width: 85%;
+    height : 700px;
+}
+    
+
+#content{width : 100%;
+height : 700px;
+padding-top: 140px;}
+
+.side{float : right;
+margin-right : 50px;
+}
+
+
+
+.side >ul > li > a{
+    color : teal;
+    font-family: 나눔손글씨 할아버지의나눔;
+    font-size: 20PX;
+    
+}
+.side >ul > li{padding-top: 10PX;}
+
+
+footer {
+        
+        width: 100%;
+        height: 200px;
+        background: teal;
+        
+        color: white;
+        font-size: 15px;
+        font-family: sans-serif;
+        
+        
+        }
+
+footer > p{
+    padding-top: 50px;
+    text-align: center;
+    }
+
+    
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+      $(document).ready(function (){
+        $('.outer-menu >li ').hover(function (){
+          $(this).find('.inner-menu').show();
+        }, function () {
+          $(this).find('.inner-menu').hide();
+        });
+      });
+    </script>
+
+
+
+<body>
+    <div id="header">
+    <header id = "main_header">
+        <div class="main1">
+            <span><a href="#">MY TRAVEL</a></span>
+        </div>
+        <div class="main2">
+            <span><a href="#">Login&nbsp&nbsp&nbsp</a></span>
+            <span>
+                <input class="search__input" type="text" placeholder="Search">
+                    </span>
+        </div>
+    </header>
+    <div id = "banner">
+        
+        <div class = "menu">
+            <ul class="outer-menu">
+                <li class="outer-menu-item">
+                    <span class="menu-title"><a href="#">HOME</a>
+                    <br><hr align="center" style="border: solid 1px palevioletred ;"></span></li>
+                <li class="outer-menu-item">
+                    <span class="menu-title"><a href="#">여행</a>
+                    <br><hr align="center" style="border: solid 1px palevioletred ;"></span></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <div id = "content">
+        
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="main_08.jpg" width="100%">
+              </div>
+              <div class="swiper-slide">
+                <img src="main_02.jpg" width="100%">
+              </div>
+              <div class="swiper-slide">
+                <img src="main_06.jpg" width="100%">
+              </div>
+              <div class="swiper-slide">
+                <img src="main_05.jpg" width="100%">
+              </div>
+            </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+              
+              
+          </div>
+          
+          
+          <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+          <script  src="mySwiper.js"></script>
+
+        <div class = "side">
+
+            <ul>
+                <li><a href="https://dlwltn1028.github.io/osaka">2016.08 오사카</a></li>
+                <li><a href="https://dlwltn1028.github.io/taipei">2017.02 대만</a></li>
+                <li><a href="#">2017.06 방콕,파타야</a></li>
+                <li><a href="#">2017.08 홍콩,마카오</a></li>
+                <li><a href="https://dlwltn1028.github.io/cebu">2018.02 세부, 보홀</a></li>
+                <li><a href="https://dlwltn1028.github.io/fukuoka">2018.05 후쿠오카</a></li>
+                <li><a href="#">2018.09 대만</a></li>
+                <li><a href="#">2018.10 코타키나발루</a></li>
+                <li><a href="https://dlwltn1028.github.io/qingdao">2019.01 칭따오</a></li>
+                <li><a href="https://dlwltn1028.github.io/vietnam">2019.02 호치민,무이네,나트랑</a></li>
+                <li><a href="https://dlwltn1028.github.io/Vladivostok">2019.04 블라디보스톡</a></li>
+                <li><a href="https://dlwltn1028.github.io/borakay/">2019.05 보라카이</a></li>
+                <li><a href="https://dlwltn1028.github.io/danang">2019.06 다낭</a></li>
+                
+            </ul>
+        </div>
+        
+    </div>
+    <footer>
+        <P>The memories of the happy days</P>
+       
+        
+
+    </footer>
+</body>
+</html>
